@@ -1,665 +1,116 @@
-local CONFIG = {
-    AUTO_STEAL_NEAREST = false,
-}
+                                                                                 local v0={            
+                                                                        AUTO_STEAL_NEAREST=false};local v1=game:        
+                                                                    GetService("Players");local v2=game:GetService("RunService"); 
+                                                                local v3=game:GetService("ReplicatedStorage");local v4=v1.LocalPlayer;  
+                                                            local v5=v4:WaitForChild("PlayerGui");local v6=require(v3:WaitForChild(       
+                                                          "Datas"):WaitForChild("Animals"));local v7={};local v8={};local v9={};local v10=  
+                                                        nil;local v11=nil;local v12=Vector3.zero;local v13=18 + 2 ;local v14=false;local v15= 
+                                                      0;local v16=nil;local v17=0;local v18=v13;local v19=0.3 + 0 ;local v20=0.2;local v21=     
+                                                    Color3.fromRGB(0,534 -279 ,1517 -(1091 + 171) );local v22=11 + 54 ;local v23={};local v24=    
+                                                  true;local v25=nil;local v26=nil;local function v27() local v176=v4.Character;if  not v176 then   
+                                                  return nil;end return v176:FindFirstChild("HumanoidRootPart") or v176:FindFirstChild("UpperTorso")  
+                                                ;end local function v28(v177) local v178=0 -0 ;local v179;local v180;while true do if (v178==(6 -4))    
+                                                then return false;end if (v178==(375 -(123 + 251))) then v180=v179:FindFirstChild("PlotSign");if v180     
+                                              then local v299=0 -0 ;local v300;while true do if ((698 -(208 + 490))==v299) then v300=v180:FindFirstChild(   
+                                              "YourBase");if (v300 and v300:IsA("BillboardGui")) then return v300.Enabled==true ;end break;end end end v178 
+                                            =1 + 1 ;end if (v178==(0 + 0)) then v179=workspace.Plots:FindFirstChild(v177);if  not v179 then return false;end  
+                                            v178=837 -(660 + 176) ;end end end local function v29(v181) if ( not v181 or  not v181:IsA("Model")) then return;   
+                                          end if v28(v181.Name) then return;end local v182=v181:FindFirstChild("AnimalPodiums");if  not v182 then return;end for  
+                                          v232,v233 in ipairs(v182:GetChildren()) do if (v233:IsA("Model") and v233:FindFirstChild("Base")) then local v254=0 + 0 ; 
+                                          local v255;local v256;local v257;while true do if (v254==0) then v255=202 -(14 + 188) ;v256=nil;v254=676 -(534 + 141) ;end  
+                                          if (v254==(1 + 0)) then v257=nil;while true do if (v255==(1 + 0)) then if v257 then for v342,v343 in ipairs(v257:           
+                                        GetChildren()) do if (v343:IsA("Model") and (v343.Name~="PromptAttachment")) then v256=v343.Name;local v353=v6[v256];if (v353   
+                                        and v353.DisplayName) then v256=v353.DisplayName;end break;end end    --[[==============================]]end table.insert(v7,{   
+                                        name=v256,plot=v181.Name,slot=v233.Name,worldPosition=v233: --[[============================================]]GetPivot().Position 
+                                        ,uid=v181.Name   .. "_"   .. v233.Name });break;end if  --[[======================================================]](v255==(0 + 0)) 
+                                       then v256="Unknown";v257=v233.Base:FindFirstChild(   --[[==========================================================]]"Spawn");v255=1;  
+                                      end end break;end end end end end local function    --[[==============================================================]]v30() local     
+                                      v183=0 -0 ;local v184;while true do if ((1 -0)==    --[[================================================================]]v183) then if   
+                                      not v184 then return;end for v269,v270 in ipairs(   --[[==================================================================]]v184:         
+                                      GetChildren()) do if v270:IsA("Model") then v29(    --[[==================================================================]]v270);end end     
+                                    v183=5 -3 ;end if (v183==(2 + 0)) then v184.          --[[====================================================================]]ChildAdded:   
+                    Connect(function(v271) if v271:IsA("Model") then local v305=0 + 0 ;   --[[====================================================================]]while true do   
+              if (v305==0) then task.wait(396.5 -(115 + 281) );v29(v271);break;end end    --[[======================================================================]]end end);task 
+            .spawn(function() while task.wait(11 -6 ) do local v301=0;while true do if (0 --[[======================================================================]]==v301) then  
+          v7={};for v330,v331 in ipairs(v184:GetChildren()) do if v331:IsA("Model") then  --[[======================================================================]]v29(v331);end 
+         end break;end end end end);break;end if (v183==0) then task.wait(2);v184=        --[[======================================================================]]workspace:    
+        WaitForChild("Plots",9 + 1 );v183=1;end end end local function v31(v185) local    --[[======================================================================]]v186=0;local  
+      v187;local v188;local v189;local v190;local v191;local v192;local v193;while true   --[[======================================================================]]do local v234 
+      =0 -0 ;while true do if (v234==1) then if (v186==(10 -7)) then if  not v192 then      --[[==================================================================]]return nil;end  
+      v193=v192:FindFirstChild("PromptAttachment");if  not v193 then return nil;end for     --[[================================================================]]v319,v320 in      
+    ipairs(v193:GetChildren()) do if v320:IsA("ProximityPrompt") then v8[v185.uid]=v320;    --[[==============================================================]]return v320;end   
+    end v186=871 -(550 + 317) ;end if ((0 -0)==v186) then if  not v185 then return nil;end    --[[==========================================================]]v187=v8[v185.uid];  
+    if (v187 and v187.Parent) then return v187;end v188=workspace.Plots:FindFirstChild(v185.    --[[====================================================]]plot);v186=1 -0 ;end    
+    v234=5 -3 ;end if ((285 -(134 + 151))==v234) then if (1==v186) then if  not v188 then return  --[[==============================================]]nil;end v189=v188:        
+    FindFirstChild("AnimalPodiums");if  not v189 then return nil;end v190=v189:FindFirstChild(v185.   --[[====================================]]slot);v186=1667 -(970 + 695)  
+    ;end if (v186==2) then if  not v190 then return nil;end v191=v190:FindFirstChild("Base");if  not v191 --[[========================]] then return nil;end v192=v191:       
+    FindFirstChild("Spawn");v186=5 -2 ;end v234=1991 -(582 + 1408) ;end if ((6 -4)==v234) then if (v186==(4 -0)) then return nil;end break;end end end end local function   
+  v32() local v194=v27();if  not v194 then return;end local v195=v194.Position;if v11 then v12=(v195-v11)/task.wait() ;end v11=v195;end local function v33(v196) if ( not 
+   v196 or  not v196.worldPosition) then return false;end local v197=v27();if  not v197 then return false;end local v198=(v197.Position-v196.worldPosition).Magnitude;  
+  return v198<=v13 ;end local function v34(v199) local v200=0 -0 ;local v201;local v202;local v203;local v204;local v205;while true do if (v200==(1824 -(1195 + 629)))    
+  then if v9[v199] then return;end v201={holdCallbacks={},triggerCallbacks={},ready=true};v200=1 -0 ;end if (v200==(244 -(187 + 54))) then if (( #v201.holdCallbacks>(780 
+   -(162 + 618))) or ( #v201.triggerCallbacks>(0 + 0))) then v9[v199]=v201;end break;end if (v200==(2 + 0)) then v204,v205=pcall(getconnections,v199.Triggered);if (v204  
+  and (type(v205)=="table")) then for v307,v308 in ipairs(v205) do if (type(v308.Function)=="function") then table.insert(v201.triggerCallbacks,v308.Function);end end    
+  end v200=3;end if (v200==1) then v202,v203=pcall(getconnections,v199.PromptButtonHoldBegan);if (v202 and (type(v203)=="table")) then for v309,v310 in ipairs(v203) do   
+  if (type(v310.Function)=="function") then table.insert(v201.holdCallbacks,v310.Function);end end end v200=3 -1 ;end end end local function v35(v206,v207) local v208=0; 
+  local v209;while true do local v235=0;while true do if ((1 -0)==v235) then if (v208==(1 + 3)) then return true;end if (v208==(1637 -(1373 + 263))) then v209.ready=     
+  false;v14=true;v208=1002 -(451 + 549) ;end v235=1 + 1 ;end if (v235==0) then if (v208==(0 -0)) then v209=v9[v206];if ( not v209 or  not v209.ready) then return false;  
+  end v208=1 -0 ;end if (v208==(1387 -(746 + 638))) then v17=tick();task.spawn(function() local v321=0 + 0 ;local v322;while true do if ((2 -0)==v321) then v14=false;v15 
+  =341 -(218 + 123) ;v16=nil;break;end if ((1581 -(1535 + 46))==v321) then if ( #v209.holdCallbacks>(0 + 0)) then for v348,v349 in ipairs(v209.holdCallbacks) do task.spawn 
+  (v349);end end v322=tick();while (tick() -v322)<1.3  do local v339=0;while true do if (v339==(0 + 0)) then v15=(tick() -v322)/1.3 ;task.wait(560.05 -(306 + 254) );break; 
+  end end end v15=1 + 0 ;v321=1 -0 ;end if (v321==(1468 -(899 + 568))) then if ( #v209.triggerCallbacks>(0 + 0)) then for v350,v351 in ipairs(v209.triggerCallbacks) do     
+  task.spawn(v351);end end task.wait(0.1);v209.ready=true;task.wait(0.3);v321=4 -2 ;end end end);v208=607 -(268 + 335) ;end v235=291 -(60 + 230) ;end if (v235==2) then if  
+  (v208==(574 -(426 + 146))) then v15=0;v16=v207;v208=1 + 2 ;end break;end end end end local function v36(v210,v211) local v212=0;while true do if (v212==(1456 -(282 +     
+  1174))) then if ( not v210 or  not v210.Parent) then return false;end v34(v210);v212=812 -(569 + 242) ;end if (v212==(2 -1)) then if  not v9[v210] then return false;end  
+  return v35(v210,v211);end end end local function v37() local v213=v27();if  not v213 then return nil;end local v214=nil;local v215=math.huge;for v236,v237 in ipairs(v7)  
+  do local v238=0 + 0 ;local v239;while true do if (v238==0) then v239=0;while true do if (v239==0) then if v28(v237.plot) then continue;end if v237.worldPosition then     
+  local v333=1024 -(706 + 318) ;local v334;while true do if (v333==(1251 -(721 + 530))) then v334=(v213.Position-v237.worldPosition).Magnitude;if (v334<v215) then local    
+  v354=1271 -(945 + 326) ;while true do if (v354==0) then v215=v334;v214=v237;break;end end end break;end end end break;end end break;end end end return v214;end local     
+  function v38() local v216=0 -0 ;local v217;while true do if (v216==(0 + 0)) then v217=0;while true do if (1==v217) then v26=v2.Heartbeat:Connect(v32);v25=v2.Heartbeat:   
+  Connect(function() local v323=0;local v324;local v325;while true do if ((703 -(271 + 429))==v323) then v325=v8[v324.uid];if ( not v325 or  not v325.Parent) then v325=v31 
+  (v324);end v323=4 + 0 ;end if (v323==0) then if  not v0.AUTO_STEAL_NEAREST then return;end if v14 then return;end v323=1501 -(1408 + 92) ;end if ((1090 -(461 + 625))==   
+  v323) then if v325 then v36(v325,v324);end break;end if (1==v323) then local v337=0;while true do if (v337==1) then v323=1290 -(993 + 295) ;break;end if (v337==(0 + 0) 
+  ) then v324=v37();if  not v324 then return;end v337=1;end end end if ((1173 -(418 + 753))==v323) then if  not v33(v324) then return;end if (v10~=v324.uid) then v10=    
+  v324.uid;end v323=2 + 1 ;end end end);break;end if (v217==(0 + 0)) then if v25 then v25:Disconnect();end if v26 then v26:Disconnect();end v217=1 + 0 ;end end break;end 
+     end end local v39=Instance.new("ScreenGui");v39.Name="AutoStealUI";v39.ResetOnSpawn=false;v39.DisplayOrder=252726 + 747273 ;v39.Parent=v5;local v44=Instance.new(    
+    "TextLabel");v44.Size=UDim2.new(0,250,529 -(406 + 123) ,1794 -(1749 + 20) );v44.Position=UDim2.new(0 + 0 ,1332 -(1249 + 73) ,0 + 0 ,1205 -(466 + 679) );v44.          
+    BackgroundTransparency=2 -1 ;v44.Text="discord.gg/pjuj99ure5";v44.Font=Enum.Font.GothamBold;v44.TextSize=39 -25 ;v44.TextColor3=Color3.fromRGB(255,255,2155 -(106 +   
+    1794) );v44.TextXAlignment=Enum.TextXAlignment.Left;v44.Parent=v39;local v56=Instance.new("TextLabel");v56.Size=UDim2.new(0,80 + 170 ,0 + 0 ,59 -39 );v56.Position=   
+      UDim2.new(0 -0 ,10,114 -(4 + 110) ,669 -(57 + 527) );v56.BackgroundTransparency=1428 -(41 + 1386) ;v56.Text="Made by luni010_";v56.Font=Enum.Font.GothamBold;v56. 
+      TextSize=12;v56.TextColor3=Color3.fromRGB(255,358 -(17 + 86) ,174 + 81 );v56.TextXAlignment=Enum.TextXAlignment.Left;v56.Parent=v39;local v66=Instance.new(       
+      "Frame");v66.Name="ButtonFrame";v66.Size=UDim2.new(0 -0 ,419 -274 ,166 -(122 + 44) ,77 -32 );v66.Position=UDim2.new(0,33 -23 ,0 + 0 ,2 + 8 );v66.BackgroundColor3 
+        =Color3.fromRGB(0,0,0 -0 );v66.BackgroundTransparency=0;v66.BorderSizePixel=65 -(30 + 35) ;v66.Parent=v39;local v74=Instance.new("UICorner");v74.CornerRadius=  
+        UDim.new(0 + 0 ,1267 -(1043 + 214) );v74.Parent=v66;local v77=Instance.new("UIStroke");v77.Thickness=3.3 -2 ;v77.ApplyStrokeMode=Enum.ApplyStrokeMode.Border;   
+        v77.Color=Color3.fromRGB(1467 -(323 + 889) ,686 -431 ,255);v77.Parent=v66;local v83=Instance.new("UIGradient");v83.Color=ColorSequence.new({                    
+          ColorSequenceKeypoint.new(320 -(53 + 267) ,Color3.fromRGB(58 + 197 ,463 -(15 + 398) ,50)),ColorSequenceKeypoint.new(0.25 -0 ,Color3.fromRGB(0 + 0 ,0 + 0 ,  
+            850 -(20 + 830) )),ColorSequenceKeypoint.new(0.5,Color3.fromRGB(255,50,40 + 10 )),ColorSequenceKeypoint.new(0.75,Color3.fromRGB(126 -(116 + 10) ,0 + 0 ,  
+              738 -(542 + 196) )),ColorSequenceKeypoint.new(1,Color3.fromRGB(255,107 -57 ,15 + 35 ))});v83.Parent=v77;task.spawn(function() while true do v83.        
+                Rotation=v83.Rotation + 2 ;task.wait(0.02 + 0 );end end);local v86=Instance.new("TextButton");v86.Name="AutoStealButton";v86.Size=UDim2.new(0 + 0 ,   
+                  355 -220 ,0 -0 ,1586 -(1126 + 425) );v86.AnchorPoint=Vector2.new(405.5 -(118 + 287) ,0.5);v86.Position=UDim2.new(0.5 -0 ,0,0.5,1121 -(118 + 1003) 
+                       );v86.BackgroundColor3=Color3.fromRGB(87 -57 ,407 -(142 + 235) ,136 -106 );v86.Text="CEBOLLITA: OFF ðŸ¥€";v86.Font=Enum.Font.GothamBold;v86.   
+                                  TextSize=13;v86.TextColor3=Color3.fromRGB(56 + 199 ,1232 -(553 + 424) ,481 -226 );v86.BorderSizePixel=0 + 0 ;v86.Parent=v66;local 
+                                       v98=Instance.new("UICorner");v98.CornerRadius=UDim.new(0 + 0 ,8);v98.Parent=v86;v86.MouseButton1Click:Connect(function() v0. 
+                                      AUTO_STEAL_NEAREST= not v0.AUTO_STEAL_NEAREST;if v0.                  AUTO_STEAL_NEAREST then local v251=0 + 0 ;while true do 
+                                       if (v251==0) then v86.Text="CEBOLLITA: ON ðŸ˜ˆ";v86.                   BackgroundColor3=Color3.fromRGB(26 + 34 ,86 + 64 ,130 
+                                       -70 );break;end end else local v252=0 -0 ;local v253;while           true do if (v252==0) then v253=0 -0 ;while true do if 
+                                       (v253==(0 + 0)) then v86.Text="CEBOLLITA: OFF âš¡";v86.                BackgroundColor3=Color3.fromRGB(144 -114 ,30,783 -(   
+                                      239 + 514) );break;end end break;end end end end);local v101=           Instance.new("Frame");v101.Size=UDim2.new(0,220,0 + 
+                                       0 ,1351 -(797 + 532) );v101.Position=UDim2.new(0.5 + 0 , -(            38 + 72),0, -(121 -69));v101.BackgroundColor3=      
+                                      Color3.fromRGB(1202 -(373 + 829) ,0,0);v101.                            BackgroundTransparency=731.2 -(476 + 255) ;v101.  
+                                        BorderSizePixel=1130 -(369 + 761) ;v101.Visible=true;v101.            Parent=v39;local v109=Instance.new("UICorner");   
+                                        v109.CornerRadius=UDim.new(0 + 0 ,10 -4 );v109.Parent=v101;             local v112=Instance.new("UIStroke");v112.       
+                                        Thickness=1.2 -0 ;v112.Transparency=238 -(64 + 174) ;v112.              Color=Color3.fromRGB(37 + 218 ,377 -122 ,255) 
+                                        ;v112.Parent=v101;local v117=Instance.new("UIGradient");                v117.Color=ColorSequence.new({                
+                                        ColorSequenceKeypoint.new(0,Color3.fromRGB(471 -(42 + 174                 ) ,38 + 12 ,50)),ColorSequenceKeypoint.   
+                                        new(0.2,Color3.fromRGB(0,0,0 + 0 )),ColorSequenceKeypoint                 .new(1504.5 -(363 + 1141) ,Color3.fromRGB 
+                                          (1835 -(1183 + 397) ,152 -102 ,37 + 13 )),                                ColorSequenceKeypoint.new(1975.8 -(   
+                                          1913 + 62) ,Color3.fromRGB(0,0,0)),                                         ColorSequenceKeypoint.new(1,    
+                                            Color3.fromRGB(675 -420 ,1983 -(565 + 1368) ,188 -                          138 ))});v117.Parent=v112 
+                                            ;local v120=Instance.new("Frame");v120.Size=UDim2                                 .new(0.9,   
+                                              1661 -(1477 + 184) ,0,10 -2 );v120.Position=  
+                                                UDim2.new(0.05 + 0 ,856 -(564 + 292) ,0.5 
+                                                    , -4);v120.BackgroundColor3=Color3. 
+                                                          fromRGB(69 -29 ,120 -80 
 
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local LocalPlayer = Players.LocalPlayer
-local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
-
-local AnimalsData = require(ReplicatedStorage:WaitForChild("Datas"):WaitForChild("Animals"))
-
-local allAnimalsCache = {}
-local PromptMemoryCache = {}
-local InternalStealCache = {}
-local LastTargetUID = nil
-local LastPlayerPosition = nil
-local PlayerVelocity = Vector3.zero
-
-local AUTO_STEAL_PROX_RADIUS = 20
-local IsStealing = false
-local StealProgress = 0
-local CurrentStealTarget = nil
-local StealStartTime = 0
-
-local CIRCLE_RADIUS = AUTO_STEAL_PROX_RADIUS
-local PART_THICKNESS = 0.3
-local PART_HEIGHT = 0.2
-local PART_COLOR = Color3.fromRGB(0, 255, 255)
-local PartsCount = 65
-local circleParts = {}
-local circleEnabled = true
-
-local stealConnection = nil
-local velocityConnection = nil
-
-local function getHRP()
-    local char = LocalPlayer.Character
-    if not char then return nil end
-    return char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("UpperTorso")
-end
-
-local function isMyBase(plotName)
-    local plot = workspace.Plots:FindFirstChild(plotName)
-    if not plot then return false end
-    
-    local sign = plot:FindFirstChild("PlotSign")
-    if sign then
-        local yourBase = sign:FindFirstChild("YourBase")
-        if yourBase and yourBase:IsA("BillboardGui") then
-            return yourBase.Enabled == true
-        end
-    end
-    return false
-end
-
-local function scanSinglePlot(plot)
-    if not plot or not plot:IsA("Model") then return end
-    if isMyBase(plot.Name) then return end
-    
-    local podiums = plot:FindFirstChild("AnimalPodiums")
-    if not podiums then return end
-    
-    for _, podium in ipairs(podiums:GetChildren()) do
-        if podium:IsA("Model") and podium:FindFirstChild("Base") then
-            local animalName = "Unknown"
-            local spawn = podium.Base:FindFirstChild("Spawn")
-            if spawn then
-                for _, child in ipairs(spawn:GetChildren()) do
-                    if child:IsA("Model") and child.Name ~= "PromptAttachment" then
-                        animalName = child.Name
-                        local animalInfo = AnimalsData[animalName]
-                        if animalInfo and animalInfo.DisplayName then
-                            animalName = animalInfo.DisplayName
-                        end
-                        break
-                    end
-                end
-            end
-            
-            table.insert(allAnimalsCache, {
-                name = animalName,
-                plot = plot.Name,
-                slot = podium.Name,
-                worldPosition = podium:GetPivot().Position,
-                uid = plot.Name .. "_" .. podium.Name,
-            })
-        end
-    end
-end
-
-local function initializeScanner()
-    task.wait(2)
-    
-    local plots = workspace:WaitForChild("Plots", 10)
-    if not plots then 
-        return
-    end
-    
-    for _, plot in ipairs(plots:GetChildren()) do
-        if plot:IsA("Model") then
-            scanSinglePlot(plot)
-        end
-    end
-    
-    plots.ChildAdded:Connect(function(plot)
-        if plot:IsA("Model") then
-            task.wait(0.5)
-            scanSinglePlot(plot)
-        end
-    end)
-    
-    task.spawn(function()
-        while task.wait(5) do
-            allAnimalsCache = {}
-            for _, plot in ipairs(plots:GetChildren()) do
-                if plot:IsA("Model") then
-                    scanSinglePlot(plot)
-                end
-            end
-        end
-    end)
-end
-
-local function findProximityPromptForAnimal(animalData)
-    if not animalData then return nil end
-    
-    local cachedPrompt = PromptMemoryCache[animalData.uid]
-    if cachedPrompt and cachedPrompt.Parent then
-        return cachedPrompt
-    end
-    
-    local plot = workspace.Plots:FindFirstChild(animalData.plot)
-    if not plot then return nil end
-    
-    local podiums = plot:FindFirstChild("AnimalPodiums")
-    if not podiums then return nil end
-    
-    local podium = podiums:FindFirstChild(animalData.slot)
-    if not podium then return nil end
-    
-    local base = podium:FindFirstChild("Base")
-    if not base then return nil end
-    
-    local spawn = base:FindFirstChild("Spawn")
-    if not spawn then return nil end
-    
-    local attach = spawn:FindFirstChild("PromptAttachment")
-    if not attach then return nil end
-    
-    for _, p in ipairs(attach:GetChildren()) do
-        if p:IsA("ProximityPrompt") then
-            PromptMemoryCache[animalData.uid] = p
-            return p
-        end
-    end
-    
-    return nil
-end
-
-local function updatePlayerVelocity()
-    local hrp = getHRP()
-    if not hrp then return end
-    
-    local currentPos = hrp.Position
-    
-    if LastPlayerPosition then
-        PlayerVelocity = (currentPos - LastPlayerPosition) / task.wait()
-    end
-    
-    LastPlayerPosition = currentPos
-end
-
-local function shouldSteal(animalData)
-    if not animalData or not animalData.worldPosition then return false end
-    
-    local hrp = getHRP()
-    if not hrp then return false end
-    
-    local currentDistance = (hrp.Position - animalData.worldPosition).Magnitude
-    
-    return currentDistance <= AUTO_STEAL_PROX_RADIUS
-end
-
-local function buildStealCallbacks(prompt)
-    if InternalStealCache[prompt] then return end
-    
-    local data = {
-        holdCallbacks = {},
-        triggerCallbacks = {},
-        ready = true,
-    }
-    
-    local ok1, conns1 = pcall(getconnections, prompt.PromptButtonHoldBegan)
-    if ok1 and type(conns1) == "table" then
-        for _, conn in ipairs(conns1) do
-            if type(conn.Function) == "function" then
-                table.insert(data.holdCallbacks, conn.Function)
-            end
-        end
-    end
-    
-    local ok2, conns2 = pcall(getconnections, prompt.Triggered)
-    if ok2 and type(conns2) == "table" then
-        for _, conn in ipairs(conns2) do
-            if type(conn.Function) == "function" then
-                table.insert(data.triggerCallbacks, conn.Function)
-            end
-        end
-    end
-    
-    if (#data.holdCallbacks > 0) or (#data.triggerCallbacks > 0) then
-        InternalStealCache[prompt] = data
-    end
-end
-
-local function executeInternalStealAsync(prompt, animalData)
-    local data = InternalStealCache[prompt]
-    if not data or not data.ready then return false end
-    
-    data.ready = false
-    IsStealing = true
-    StealProgress = 0
-    CurrentStealTarget = animalData
-    StealStartTime = tick()
-    
-    task.spawn(function()
-        if #data.holdCallbacks > 0 then
-            for _, fn in ipairs(data.holdCallbacks) do
-                task.spawn(fn)
-            end
-        end
-        
-        local startTime = tick()
-        while tick() - startTime < 1.3 do
-            StealProgress = (tick() - startTime) / 1.3
-            task.wait(0.05)
-        end
-        StealProgress = 1
-        
-        if #data.triggerCallbacks > 0 then
-            for _, fn in ipairs(data.triggerCallbacks) do
-                task.spawn(fn)
-            end
-        end
-        
-        task.wait(0.1)
-        data.ready = true
-        
-        task.wait(0.3)
-        IsStealing = false
-        StealProgress = 0
-        CurrentStealTarget = nil
-    end)
-    
-    return true
-end
-
-local function attemptSteal(prompt, animalData)
-    if not prompt or not prompt.Parent then return false end
-    
-    buildStealCallbacks(prompt)
-    if not InternalStealCache[prompt] then return false end
-    
-    return executeInternalStealAsync(prompt, animalData)
-end
-
-local function getNearestAnimal()
-    local hrp = getHRP()
-    if not hrp then return nil end
-    
-    local nearest = nil
-    local minDist = math.huge
-    
-    for _, animalData in ipairs(allAnimalsCache) do
-        if isMyBase(animalData.plot) then continue end
-        
-        if animalData.worldPosition then
-            local dist = (hrp.Position - animalData.worldPosition).Magnitude
-            if dist < minDist then
-                minDist = dist
-                nearest = animalData
-            end
-        end
-    end
-    
-    return nearest
-end
-
-local function autoStealLoop()
-    if stealConnection then stealConnection:Disconnect() end
-    if velocityConnection then velocityConnection:Disconnect() end
-    
-    velocityConnection = RunService.Heartbeat:Connect(updatePlayerVelocity)
-    
-    stealConnection = RunService.Heartbeat:Connect(function()
-        if not CONFIG.AUTO_STEAL_NEAREST then return end
-        if IsStealing then return end
-        
-        local targetAnimal = getNearestAnimal()
-        if not targetAnimal then return end
-        
-        if not shouldSteal(targetAnimal) then return end
-        
-        if LastTargetUID ~= targetAnimal.uid then
-            LastTargetUID = targetAnimal.uid
-        end
-        
-        local prompt = PromptMemoryCache[targetAnimal.uid]
-        if not prompt or not prompt.Parent then
-            prompt = findProximityPromptForAnimal(targetAnimal)
-        end
-        
-        if prompt then
-            attemptSteal(prompt, targetAnimal)
-        end
-    end)
-end
-
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "AutoStealUI"
-screenGui.ResetOnSpawn = false
-screenGui.DisplayOrder = 999999
-screenGui.Parent = PlayerGui
-local discordLabel = Instance.new("TextLabel")
-discordLabel.Size = UDim2.new(0, 250, 0, 25)
-discordLabel.Position = UDim2.new(0, 10, 0, 60) -- under your main button
-discordLabel.BackgroundTransparency = 1
-discordLabel.Text = "discord.gg/pjuj99ure5"
-discordLabel.Font = Enum.Font.GothamBold
-discordLabel.TextSize = 14
-discordLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-discordLabel.TextXAlignment = Enum.TextXAlignment.Left
-discordLabel.Parent = screenGui
--- New code for "Made by luni010_" label (add this right below discordLabel)
-local creditLabel = Instance.new("TextLabel")
-creditLabel.Size = UDim2.new(0, 250, 0, 20)
-creditLabel.Position = UDim2.new(0, 10, 0, 85) -- position it just below the Discord label
-creditLabel.BackgroundTransparency = 1
-creditLabel.Text = "Made by luni010_"
-creditLabel.Font = Enum.Font.GothamBold
-creditLabel.TextSize = 12
-creditLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-creditLabel.TextXAlignment = Enum.TextXAlignment.Left
-creditLabel.Parent = screenGui
-
-local buttonFrame = Instance.new("Frame")
-buttonFrame.Name = "ButtonFrame"
-buttonFrame.Size = UDim2.new(0, 145, 0, 45)
-buttonFrame.Position = UDim2.new(0, 10, 0, 10)
-buttonFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-buttonFrame.BackgroundTransparency = 0
-buttonFrame.BorderSizePixel = 0
-buttonFrame.Parent = screenGui
-
-local frameCorner = Instance.new("UICorner")
-frameCorner.CornerRadius = UDim.new(0, 10)
-frameCorner.Parent = buttonFrame
-
-local frameStroke = Instance.new("UIStroke")
-frameStroke.Thickness = 1.3
-frameStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-frameStroke.Color = Color3.fromRGB(255, 255, 255)
-frameStroke.Parent = buttonFrame
-
-local frameGradient = Instance.new("UIGradient")
-frameGradient.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.25, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.75, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 50, 50))
-})
-frameGradient.Parent = frameStroke
-
-task.spawn(function()
-    while true do
-        frameGradient.Rotation = frameGradient.Rotation + 2
-        task.wait(0.02)
-    end
-end)
-
-local button = Instance.new("TextButton")
-button.Name = "AutoStealButton"
-button.Size = UDim2.new(0, 135, 0, 35)
-button.AnchorPoint = Vector2.new(0.5, 0.5) 
-button.Position = UDim2.new(0.5, 0, 0.5, 0) 
-
-button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-button.Text = "CEBOLLITA: OFF 🥀"
-button.Font = Enum.Font.GothamBold
-button.TextSize = 13
-button.TextColor3 = Color3.fromRGB(255, 255, 255)
-button.BorderSizePixel = 0
-button.Parent = buttonFrame
-
-local buttonCorner = Instance.new("UICorner")
-buttonCorner.CornerRadius = UDim.new(0, 8)
-buttonCorner.Parent = button
-
-button.MouseButton1Click:Connect(function()
-    CONFIG.AUTO_STEAL_NEAREST = not CONFIG.AUTO_STEAL_NEAREST
-    
-    if CONFIG.AUTO_STEAL_NEAREST then
-        button.Text = "CEBOLLITA: ON 😈"
-        button.BackgroundColor3 = Color3.fromRGB(60, 150, 60)
-    else
-        button.Text = "CEBOLLITA: OFF ⚡"
-        button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    end
-end)
-
-local showbarFrame = Instance.new("Frame")
-showbarFrame.Size = UDim2.new(0, 220, 0, 22)
-showbarFrame.Position = UDim2.new(0.5, -110, 0, -52)
-showbarFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-showbarFrame.BackgroundTransparency = 0.2
-showbarFrame.BorderSizePixel = 0
-showbarFrame.Visible = true
-showbarFrame.Parent = screenGui
-
-local showbarCorner = Instance.new("UICorner")
-showbarCorner.CornerRadius = UDim.new(0, 6)
-showbarCorner.Parent = showbarFrame
-
-local uiStroke = Instance.new("UIStroke")
-uiStroke.Thickness = 1.2
-uiStroke.Transparency = 0
-uiStroke.Color = Color3.fromRGB(255, 255, 255)
-uiStroke.Parent = showbarFrame
-
-local uiGradient = Instance.new("UIGradient")
-uiGradient.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 50, 50))
-})
-uiGradient.Parent = uiStroke
-
-local progressBarBg = Instance.new("Frame")
-progressBarBg.Size = UDim2.new(0.9, 0, 0, 8)
-progressBarBg.Position = UDim2.new(0.05, 0, 0.5, -4)
-progressBarBg.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-progressBarBg.BorderSizePixel = 0
-progressBarBg.Parent = showbarFrame
-
-local progressBarCorner = Instance.new("UICorner")
-progressBarCorner.CornerRadius = UDim.new(1, 0)
-progressBarCorner.Parent = progressBarBg
-
-local progressBarFill = Instance.new("Frame")
-progressBarFill.Size = UDim2.new(0, 0, 1, 0)
-progressBarFill.Position = UDim2.new(0, 0, 0, 0)
-progressBarFill.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
-progressBarFill.BorderSizePixel = 0
-progressBarFill.Parent = progressBarBg
-
-local fillCorner = Instance.new("UICorner")
-fillCorner.CornerRadius = UDim.new(1, 0)
-fillCorner.Parent = progressBarFill
-
-local fillGradient = Instance.new("UIGradient")
-fillGradient.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 150, 50)),
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 50, 50))
-})
-fillGradient.Parent = progressBarFill
-
-local radiusFrame = Instance.new("Frame")
-radiusFrame.Size = UDim2.new(0, 40, 0, 22)
-radiusFrame.Position = UDim2.new(0.5, 115, 0, -52)
-radiusFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-radiusFrame.BackgroundTransparency = 0.2
-radiusFrame.BorderSizePixel = 0
-radiusFrame.Visible = true
-radiusFrame.Parent = screenGui
-
-local radiusCorner = Instance.new("UICorner")
-radiusCorner.CornerRadius = UDim.new(0, 6)
-radiusCorner.Parent = radiusFrame
-
-local radiusStroke = Instance.new("UIStroke")
-radiusStroke.Thickness = 1.2
-radiusStroke.Transparency = 0
-radiusStroke.Color = Color3.fromRGB(255, 255, 255)
-radiusStroke.Parent = radiusFrame
-
-local radiusGradient = Instance.new("UIGradient")
-radiusGradient.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 50, 50)),
-    ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 50, 50))
-})
-radiusGradient.Parent = radiusStroke
-
-local radiusText = Instance.new("TextButton")
-radiusText.Size = UDim2.new(1, 0, 1, 0)
-radiusText.Position = UDim2.new(0, 0, 0, 0)
-radiusText.BackgroundTransparency = 1
-radiusText.Text = AUTO_STEAL_PROX_RADIUS
-radiusText.Font = Enum.Font.GothamBold
-radiusText.TextSize = 13
-radiusText.TextColor3 = Color3.fromRGB(255, 255, 255)
-radiusText.Parent = radiusFrame
-
-local typing = false
-local inputConnection
-
-local function createCircle(character)
-    for _, part in ipairs(circleParts) do
-        if part then part:Destroy() end
-    end
-    circleParts = {}
-    
-    CIRCLE_RADIUS = AUTO_STEAL_PROX_RADIUS
-    local root = character:WaitForChild("HumanoidRootPart")
-    
-    local points = {}
-    for i = 0, PartsCount - 1 do
-        local angle = math.rad(i * 360 / PartsCount)
-        table.insert(points, Vector3.new(math.cos(angle), 0, math.sin(angle)) * CIRCLE_RADIUS)
-    end
-    
-    for i = 1, #points do
-        local nextIndex = i % #points + 1
-        local p1 = points[i]
-        local p2 = points[nextIndex]
-        
-        local part = Instance.new("Part")
-        part.Anchored = true
-        part.CanCollide = false
-        part.Size = Vector3.new((p2 - p1).Magnitude, PART_HEIGHT, PART_THICKNESS)
-        part.Color = PART_COLOR
-        part.Material = Enum.Material.Neon
-        part.Transparency = 0.3
-        part.TopSurface = Enum.SurfaceType.Smooth
-        part.BottomSurface = Enum.SurfaceType.Smooth
-        part.Parent = workspace
-        table.insert(circleParts, part)
-    end
-end
-
-local function updateCircle(character)
-    local root = character:FindFirstChild("HumanoidRootPart")
-    if not root then return end
-    
-    local points = {}
-    for i = 0, PartsCount - 1 do
-        local angle = math.rad(i * 360 / PartsCount)
-        table.insert(points, Vector3.new(math.cos(angle), 0, math.sin(angle)) * CIRCLE_RADIUS)
-    end
-    
-    for i, part in ipairs(circleParts) do
-        local nextIndex = i % #points + 1
-        local p1 = points[i]
-        local p2 = points[nextIndex]
-        local center = (p1 + p2) / 2 + root.Position
-        
-        part.CFrame = CFrame.new(center, center + Vector3.new(p2.X - p1.X, 0, p2.Z - p1.Z)) * CFrame.Angles(0, math.pi/2, 0)
-    end
-end
-
-local function onCharacterAdded(character)
-    if circleEnabled then
-        createCircle(character)
-        RunService:BindToRenderStep("CircleFollow", Enum.RenderPriority.Camera.Value + 1, function()
-            updateCircle(character)
-        end)
-    end
-end
-
-local function updateCircleRadius()
-    CIRCLE_RADIUS = AUTO_STEAL_PROX_RADIUS
-    local character = LocalPlayer.Character
-    if character and circleEnabled then
-        createCircle(character)
-    end
-end
-
-radiusText.MouseButton1Click:Connect(function()
-    if typing then return end
-    
-    typing = true
-    local originalText = radiusText.Text
-    
-    local textBox = Instance.new("TextBox")
-    textBox.Size = UDim2.new(1, 0, 1, 0)
-    textBox.Position = UDim2.new(0, 0, 0, 0)
-    textBox.BackgroundTransparency = 1
-    textBox.Text = AUTO_STEAL_PROX_RADIUS
-    textBox.Font = Enum.Font.GothamBold
-    textBox.TextSize = 13
-    textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    textBox.ClearTextOnFocus = false
-    textBox.Parent = radiusFrame
-    
-    textBox:CaptureFocus()
-    
-    inputConnection = textBox.FocusLost:Connect(function(enterPressed)
-        if enterPressed then
-            local num = tonumber(textBox.Text)
-            if num and num >= 5 and num <= 200 then
-                AUTO_STEAL_PROX_RADIUS = math.floor(num)
-                updateCircleRadius()
-            end
-        end
-        
-        textBox:Destroy()
-        radiusText.Text = AUTO_STEAL_PROX_RADIUS
-        typing = false
-        inputConnection:Disconnect()
-    end)
-end)
-
-local progressTween = nil
-
-task.spawn(function()
-    while task.wait(0.03) do
-        if not typing then
-            radiusText.Text = AUTO_STEAL_PROX_RADIUS
-        end
-        
-        if IsStealing then
-            if progressTween then
-                progressTween:Cancel()
-            end
-            
-            progressTween = game:GetService("TweenService"):Create(
-                progressBarFill,
-                TweenInfo.new(0.1, Enum.EasingStyle.Linear),
-                {Size = UDim2.new(StealProgress, 0, 1, 0)}
-            )
-            progressTween:Play()
-        else
-            if progressTween then
-                progressTween:Cancel()
-                progressTween = nil
-            end
-            
-            if progressBarFill.Size.X.Scale > 0 then
-                progressBarFill.Size = UDim2.new(
-                    math.max(0, progressBarFill.Size.X.Scale - 0.03), 
-                    0, 
-                    1, 
-                    0
-                )
-            end
-        end
-    end
-end)
-
-initializeScanner()
-autoStealLoop()
-
-if LocalPlayer.Character then
-    onCharacterAdded(LocalPlayer.Character)
-end
-
-LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+ ,344 -(244 + 60) );v120.BorderSizePixel=0;v120.Parent=v101;local v126=Instance.new("UICorner");v126.CornerRadius=UDim.new(1 + 0 ,0);v126.Parent=v120;local v129=Instance.new("Frame");v129.Size=UDim2.new(476 -(41 + 435) ,1001 -(938 + 63) ,1 + 0 ,1125 -(936 + 189) );v129.Position=UDim2.new(0 + 0 ,1613 -(1565 + 48) ,0,0 + 0 );v129.BackgroundColor3=Color3.fromRGB(255,1188 -(782 + 356) ,50);v129.BorderSizePixel=267 -(176 + 91) ;v129.Parent=v120;local v135=Instance.new("UICorner");v135.CornerRadius=UDim.new(2 -1 ,0 -0 );v135.Parent=v129;local v138=Instance.new("UIGradient");v138.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(255,50,1925 -(157 + 1718) )),ColorSequenceKeypoint.new(0.5 + 0 ,Color3.fromRGB(905 -650 ,512 -362 ,1068 -(697 + 321) )),ColorSequenceKeypoint.new(2 -1 ,Color3.fromRGB(255,105 -55 ,50))});v138.Parent=v129;local v141=Instance.new("Frame");v141.Size=UDim2.new(0 -0 ,40,0,22);v141.Position=UDim2.new(0.5 + 0 ,215 -100 ,0 -0 , -52);v141.BackgroundColor3=Color3.fromRGB(1227 -(322 + 905) ,611 -(602 + 9) ,1189 -(449 + 740) );v141.BackgroundTransparency=872.2 -(826 + 46) ;v141.BorderSizePixel=947 -(245 + 702) ;v141.Visible=true;v141.Parent=v39;local v149=Instance.new("UICorner");v149.CornerRadius=UDim.new(0 -0 ,2 + 4 );v149.Parent=v141;local v152=Instance.new("UIStroke");v152.Thickness=1899.2 -(260 + 1638) ;v152.Transparency=0;v152.Color=Color3.fromRGB(695 -(382 + 58) ,818 -563 ,212 + 43 );v152.Parent=v141;local v157=Instance.new("UIGradient");v157.Color=ColorSequence.new({ColorSequenceKeypoint.new(0 -0 ,Color3.fromRGB(757 -502 ,50,1255 -(902 + 303) )),ColorSequenceKeypoint.new(0.2 -0 ,Color3.fromRGB(0,0 -0 ,0)),ColorSequenceKeypoint.new(1690.5 -(1121 + 569) ,Color3.fromRGB(469 -(22 + 192) ,50,733 -(483 + 200) )),ColorSequenceKeypoint.new(1463.8 -(1404 + 59) ,Color3.fromRGB(0 -0 ,0 -0 ,0)),ColorSequenceKeypoint.new(1,Color3.fromRGB(817 -(334 + 228) ,168 -118 ,115 -65 ))});v157.Parent=v152;local v160=Instance.new("TextButton");v160.Size=UDim2.new(1,0 -0 ,1 + 0 ,236 -(141 + 95) );v160.Position=UDim2.new(0 + 0 ,0,0 -0 ,0);v160.BackgroundTransparency=1;v160.Text=v13;v160.Font=Enum.Font.GothamBold;v160.TextSize=30 -17 ;v160.TextColor3=Color3.fromRGB(60 + 195 ,698 -443 ,255);v160.Parent=v141;local v169=false;local v170;local function v171(v219) local v220=0 + 0 ;local v221;local v222;while true do if (v220==(2 + 1)) then for v272=1 -0 , #v222 do local v273=(v272% #v222) + 1 + 0 ;local v274=v222[v272];local v275=v222[v273];local v276=Instance.new("Part");v276.Anchored=true;v276.CanCollide=false;v276.Size=Vector3.new((v275-v274).Magnitude,v20,v19);v276.Color=v21;v276.Material=Enum.Material.Neon;v276.Transparency=0.3;v276.TopSurface=Enum.SurfaceType.Smooth;v276.BottomSurface=Enum.SurfaceType.Smooth;v276.Parent=workspace;table.insert(v23,v276);end break;end if (v220==2) then v222={};for v288=163 -(92 + 71) ,v22-1  do local v289=0 + 0 ;local v290;while true do if (v289==(0 -0)) then v290=math.rad((v288 * (1125 -(574 + 191)))/v22 );table.insert(v222,Vector3.new(math.cos(v290),0 + 0 ,math.sin(v290)) * v18 );break;end end end v220=7 -4 ;end if (1==v220) then v18=v13;v221=v219:WaitForChild("HumanoidRootPart");v220=2 + 0 ;end if (v220==(849 -(254 + 595))) then for v291,v292 in ipairs(v23) do if v292 then v292:Destroy();end end v23={};v220=127 -(55 + 71) ;end end end local function v172(v223) local v224=v223:FindFirstChild("HumanoidRootPart");if  not v224 then return;end local v225={};for v241=0 -0 ,v22-(1791 -(573 + 1217))  do local v242=math.rad((v241 * (996 -636))/v22 );table.insert(v225,Vector3.new(math.cos(v242),0 + 0 ,math.sin(v242)) * v18 );end for v243,v244 in ipairs(v23) do local v245=0;local v246;local v247;local v248;local v249;while true do if (v245==0) then local v293=0 -0 ;while true do if (v293==(940 -(714 + 225))) then v245=2 -1 ;break;end if (v293==(0 -0)) then v246=(v243% #v225) + 1 ;v247=v225[v243];v293=1 + 0 ;end end end if (v245==(1 -0)) then local v294=806 -(118 + 688) ;while true do if (v294==0) then v248=v225[v246];v249=((v247 + v248)/2) + v224.Position ;v294=1;end if (v294==1) then v245=50 -(25 + 23) ;break;end end end if (v245==(1 + 1)) then v244.CFrame=CFrame.new(v249,v249 + Vector3.new(v248.X-v247.X ,0,v248.Z-v247.Z ) ) * CFrame.Angles(1886 -(927 + 959) ,math.pi/(6 -4) ,732 -(16 + 716) ) ;break;end end end end local function v173(v226) if v24 then v171(v226);v2:BindToRenderStep("CircleFollow",Enum.RenderPriority.Camera.Value + (1 -0) ,function() v172(v226);end);end end local function v174() local v227=97 -(11 + 86) ;local v228;while true do if (v227==(0 -0)) then v18=v13;v228=v4.Character;v227=286 -(175 + 110) ;end if (v227==1) then if (v228 and v24) then v171(v228);end break;end end end v160.MouseButton1Click:Connect(function() local v229=0 -0 ;local v230;local v231;while true do if (v229==(4 -3)) then local v259=1796 -(503 + 1293) ;while true do if (v259==(0 -0)) then v231=Instance.new("TextBox");v231.Size=UDim2.new(1,0,1 + 0 ,0);v259=1062 -(810 + 251) ;end if ((1 + 0)==v259) then v231.Position=UDim2.new(0 + 0 ,0 + 0 ,533 -(43 + 490) ,733 -(711 + 22) );v229=7 -5 ;break;end end end if (v229==(863 -(240 + 619))) then v231.Parent=v141;v231:CaptureFocus();v170=v231.FocusLost:Connect(function(v296) local v297=0;local v298;while true do if ((0 + 0)==v297) then v298=0;while true do if (v298==2) then v170:Disconnect();break;end if (v298==(0 -0)) then if v296 then local v346=0 + 0 ;local v347;while true do if ((1744 -(1344 + 400))==v346) then v347=tonumber(v231.Text);if (v347 and (v347>=5) and (v347<=(605 -(255 + 150)))) then local v356=0;local v357;while true do if (v356==(0 + 0)) then v357=0 + 0 ;while true do if ((0 -0)==v357) then v13=math.floor(v347);v174();break;end end break;end end end break;end end end v231:Destroy();v298=3 -2 ;end if (1==v298) then v160.Text=v13;v169=false;v298=1741 -(404 + 1335) ;end end break;end end end);break;end if (v229==(409 -(183 + 223))) then v231.TextSize=13;v231.TextColor3=Color3.fromRGB(310 -55 ,169 + 86 ,255);v231.ClearTextOnFocus=false;v229=4;end if (v229==0) then if v169 then return;end v169=true;v230=v160.Text;v229=1 + 0 ;end if (v229==(339 -(10 + 327))) then v231.BackgroundTransparency=1;v231.Text=v13;v231.Font=Enum.Font.GothamBold;v229=3 + 0 ;end end end);local v175=nil;task.spawn(function() while task.wait(338.03 -(118 + 220) ) do local v250=0 + 0 ;while true do if (v250==(449 -(108 + 341))) then if  not v169 then v160.Text=v13;end if v14 then local v316=0;local v317;while true do if (v316==(0 + 0)) then v317=0 -0 ;while true do if (v317==(1493 -(711 + 782))) then if v175 then v175:Cancel();end v175=game:GetService("TweenService"):Create(v129,TweenInfo.new(0.1 -0 ,Enum.EasingStyle.Linear),{Size=UDim2.new(v15,0,1,469 -(270 + 199) )});v317=1 + 0 ;end if (v317==(1820 -(580 + 1239))) then v175:Play();break;end end break;end end else local v318=0 -0 ;while true do if (0==v318) then if v175 then local v340=0 + 0 ;while true do if (0==v340) then v175:Cancel();v175=nil;break;end end end if (v129.Size.X.Scale>(0 + 0)) then v129.Size=UDim2.new(math.max(0,v129.Size.X.Scale-(0.03 + 0) ),0 -0 ,1,0 + 0 );end break;end end end break;end end end end);v30();v38();if v4.Character then v173(v4.Character);end v4.CharacterAdded:Connect(v173);
