@@ -333,7 +333,17 @@ discordLabel.TextSize = 14
 discordLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 discordLabel.TextXAlignment = Enum.TextXAlignment.Left
 discordLabel.Parent = screenGui
-
+-- New code for "Made by luni010_" label (add this right below discordLabel)
+local creditLabel = Instance.new("TextLabel")
+creditLabel.Size = UDim2.new(0, 250, 0, 20)
+creditLabel.Position = UDim2.new(0, 10, 0, 85) -- position it just below the Discord label
+creditLabel.BackgroundTransparency = 1
+creditLabel.Text = "Made by luni010_"
+creditLabel.Font = Enum.Font.GothamBold
+creditLabel.TextSize = 12
+creditLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+creditLabel.TextXAlignment = Enum.TextXAlignment.Left
+creditLabel.Parent = screenGui
 
 local buttonFrame = Instance.new("Frame")
 buttonFrame.Name = "ButtonFrame"
